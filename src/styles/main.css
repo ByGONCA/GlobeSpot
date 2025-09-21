@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import './footer.css';
+@import './header.css';
+
+body {
+    font-family: Inter, Arial;
+    background-color: #07080a;
+}
+
+.main-modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 600px;
+    background-color: #060607;
+    color: white;
+    box-shadow: 0px 0px 40px 0px #ed1e228e;
+    border-radius: 30px;
+}
+.upper-modal {
+    margin: 40px 0 70px 50px;
+    width: 100%;
+}
+
+.upper-modal p {
+    margin: 0 0 26px 0;
+}
+
+.lower-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;         
+    margin: -30px 0 0 0;
+    color: white;      
+}
+
+.lower-modal button {
+    width: 300px;
+    height: 60px;
+    margin: 0 0 25px 0;
+    background-color: #060607;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: 1px solid #ed1e228e;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px 0px #ed1e228e;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.lower-modal button:hover {
+    width: 330px;
+    height: 70px;
+    font-size: 17px;
+    background-color: #ed1e228e;
+}
+
+.lower-modal footer {
+    margin-top: -5px;
+    color: #92929257;
+    font-size: 13px;
+}
