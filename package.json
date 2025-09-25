@@ -12,6 +12,7 @@
     "vite": "^7.1.6"
   },
   "dependencies": {
+    "vite": "^7.1.6",
     "world-countries": "^5.1.0"
   }
 }
