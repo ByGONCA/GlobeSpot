@@ -31,8 +31,10 @@ export const headerHTML = `
 
 export function loadHeader() {
   const container = document.querySelector("#header-container");
-  if (!container) return;
-
+  if (!container) {
+    console.log('no header')
+  };
+  console.log('hahah')
   container.innerHTML = headerHTML;
 
   updateUserCountry();

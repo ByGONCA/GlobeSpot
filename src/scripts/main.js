@@ -2,11 +2,10 @@ import "../styles/main.css";
 import data from "../data/countries.json";
 import "./header.js"
 import "./background.js"
-import { updateUserCountry } from './header.js'
+import { updateUserCountry, loadHeader } from './header.js'
 const countries = data.countries;
 const modalDIV = document.querySelector("#modal");
 
-import { loadHeader } from "./header.js";
 document.addEventListener("DOMContentLoaded", () => {
   loadHeader();
 });

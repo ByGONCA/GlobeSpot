@@ -1,8 +1,9 @@
+// vite.config.js
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: './src',
+  root: './',
   build: {
-    outDir: '../dist',
+    outDir: 'dist',
   },
 });
