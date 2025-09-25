@@ -1,44 +1,91 @@
 import "../styles/main.css";
+import data from "../data/countries.json";
+import "./header.js"
+import "./background.js"
+import { updateUserCountry } from './header.js'
+const countries = data.countries;
+const modalDIV = document.querySelector("#modal");
 
-document.addEventListener("DOMContentLoaded", (event) => {
-  document.body.innerHTML = `
-    <div id="modal" class="main-modal">
-      <div id="upper-modal" class="upper-modal">
-        <h1> 
-            Welcome to GlobeSpot
-        </h1>
-
-        <h4>
-            Discover everything you need to know about a country in one place:
-        </h4>
-
-        <p>
-            &#x2022 Local Time & Time Zones
-        </p>
-        <p>
-            &#x2022 Real-time Weather
-        </p>
-        <p>
-            &#x2022 Maps & Location Info
-        </p>
-        <p>
-            &#x2022 Holidays & Important Dates
-        </p>
-        <p>
-            &#x2022 Economy & Statistics
-        </p>
-      </div>
-    <div id="lower-modal" class="lower-modal">
-        <button>
-            Choose a Country
-        </button>
-        <button>
-            Your Country
-        </button>
-        <footer>
-        Using this button you give us acess to your basic information.
-        </footer>
-      </div>
-    </div>
-    `;
+import { loadHeader } from "./header.js";
+document.addEventListener("DOMContentLoaded", () => {
+  loadHeader();
 });
+
+if (localStorage.getItem("userCountry")) {
+} else {
+  document.addEventListener("DOMContentLoaded", (event) => {
+    document.querySelector("#modal").style.display = "block";
+    const userCountry = document.querySelector("#user-country");
+    const chooseCountry = document.querySelector("#choose-country");
+    const modal = document.querySelector(".modal-dropdown");
+    
+    let links = "";
+    countries.forEach((i) => {
+      links += `
+            <button id="button-${i.code}">
+            <img src="/images/flags/${i.code.toLowerCase()}.svg" class="links-img" />
+                ${i.name}
+            </button>
+            `;
+    });
+
+    modal.innerHTML = links;
+
+    chooseCountry.addEventListener("click", (i) => {
+      if (modal.style.display === "none") {
+        modal.style.display = "flex";
+      } else {
+        modal.style.display = "none";
+      }
+    });
+    countries.forEach((i) => {
+      const button = document.querySelector(`#button-${i.code}`);
+
+      if (button) {
+        button.addEventListener("click", () => {
+          if (localStorage.getItem("userCountry") === i.code) {
+          } else {
+            localStorage.setItem("userCountry", i.code);
+            console.log(i.code);
+          }
+          updateUserCountry()
+          modalDIV.style.display = "none";
+        });
+      }
+    });
+
+    // NOTE: User Country (IP ADDRESS)
+    userCountry.addEventListener("click", (i) => {
+      localStorage.setItem("userPrivacy", "true");
+      userIpAddress().then((data) => {
+        fetch(
+          `https://geo.ipify.org/api/v2/country?apiKey=at_oLQZT7zyqACOYSM4DFiP7DmP0WvQS&ipAddress=${data.ip}`
+        )
+          /* INFO: IP API PARAMETERS
+ip: "***.**.*.***"
+isp: "MEO Residential"
+
+location:
+
+country: "PT"
+region:"Distrito de Santarém"
+timezone: "+01:00"
+*/
+          .then((response) => response.json())
+          .then((data) => {
+            if (localStorage.getItem("userCountry") === data.location.country) {
+            } else {
+              localStorage.setItem("userCountry", data.location.country);
+              console.log(localStorage.getItem("userCountry"));
+            }
+          });
+      });
+      modalDIV.style.display = "none";
+    });
+  });
+}
+export async function userIpAddress() {
+  return fetch("https://api.ipify.org?format=json").then((response) =>
+    response.json()
+  );
+}

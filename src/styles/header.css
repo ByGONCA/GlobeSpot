@@ -1,3 +1,158 @@
-.header {
-    
+header {
+  left: 50%;
+  display: flex;
+  align-items: center;
+  width: 1200px;
+  height: 75px;
+  margin: 20px auto 0 auto;
+  color: rgb(124, 124, 124);
+  background-color: rgba(29, 29, 31, 0.247);
+  border-radius: 16px;
+  backdrop-filter: blur(40px);
+  box-shadow: 0px 0px 2px 1px #4e4e4e93;
+}
+
+header a {
+  transition: all 0.3s;
+  color: #9c9c9d;
+  font-family: Inter;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+header a:hover {
+  color: white;
+  text-shadow: white 1px 0 5px;
+}
+header button {
+  transition: all 0.3s;
+  color: #9c9c9d;
+  font-family: Inter;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+header button:hover {
+  color: white;
+  text-shadow: white 1px 0 5px;
+}
+
+.left-side-header {
+  align-items: center;
+  display: flex;
+  margin: 0 0 0 30px;
+}
+
+.left-side-header a {
+  display: flex;
+}
+
+.left-side-header img {
+  width: 85px;
+  height: 85px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.left-side-header img:hover {
+  width: 95px;
+  height: 95px;
+  margin: 0 0 0 -5px;
+}
+
+.middle-side-header {
+  margin: 0 auto 0 auto;
+}
+
+.middle-side-header a {
+  margin: 0 15px 0 15px;
+}
+
+.right-side-header {
+  display: flex;
+  align-items: center;
+  margin: 0 30px 0 0;
+}
+
+.country-change {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.137);
+  color: grey;
+  transition: all 0.3s;
+  display: block;
+  overflow: hidden;
+}
+
+.country-change:hover {
+  width: 45px;
+  height: 45px;
+  margin-right: -2px;
+}
+
+.country-change img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.right-side-header a {
+  cursor: pointer;
+  margin-left: 20px;
+  background-color: transparent;
+  border: none;
+}
+
+/* NOTE: USER COUNTRY DROPDOWN */
+
+.user-country-dropdown {
+  position: absolute;
+  top: 86%;
+  right: -14%;
+  width: 350px;
+  max-height: 400px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: #060607;
+  padding: 30px;
+  z-index: 10;
+  border-radius: 20px;
+  overflow-y: auto;
+  z-index: 50;
+}
+
+.user-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  margin-bottom: 18px;
+  color: white;
+  padding: 15px;
+  margin: 0 0 25px 0;
+  background-color: transparent;
+  border: 1px solid #ed1e228e;
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px 0px #ed1e228e;
+  width: 300px;
+  height: 60px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.user-button:hover {
+  width: 330px;
+  height: 70px;
+  font-size: 17px;
+  background-color: #ed1e228e;
+  text-shadow: none;
+}
+.user-button img {
+  width: 35px;
+  margin-right: 10px;
 }

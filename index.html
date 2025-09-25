@@ -1,14 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="/images/logo/globeSpotLogo.png" />
+    <link rel="icon" type="image/png" href="/images/logo/globeSpotLogo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GlobeSpot</title>
+    <title>GlobeSpot: Main Page</title>
   </head>
   <body>
+    <!-- INFO: BACKGROUND -->
+        <div id="particles-js"></div>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
+    <!-- INFO: MODAL CODE -->
+    <div id="modal" class="main-modal">
+      <div id="upper-modal" class="upper-modal">
+        <h1>Welcome to GlobeSpot</h1>
 
+        <h4>
+          Discover everything you need to know about a country in one place:
+        </h4>
+
+        <p>&#8226; Local Time & Time Zones</p>
+        <p>&#8226; Real-time Weather</p>
+        <p>&#8226; Maps & Location Info</p>
+        <p>&#8226; Holidays & Important Dates</p>
+        <p>&#8226; Economy & Statistics</p>
+      </div>
+      <div id="lower-modal" class="lower-modal">
+        <button id="choose-country">Choose a Country</button>
+        <div class="modal-dropdown">
+          <button></button>
+          <button></button>
+        </div>
+        <button id="user-country">Your Country</button>
+        <footer>
+          Using this button you give us access to your basic information.
+        </footer>
+      </div>
+    </div>
+    <!-- INFO: HEADER -->
+    <div id="header-container"></div>
+    
     <script type="module" src="/src/scripts/main.js"></script>
   </body>
 </html>
